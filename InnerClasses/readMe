@@ -1,0 +1,41 @@
+Surce : https://www.journaldev.com/996/java-inner-class
+
+1 - Static inner class :
+if inner class is static then we call it as static inner class
+
+calling static method of inner static class :
+
+OuterClass.Innreclass.staticMethod
+
+calling non static method of inner static calss:
+
+2 - non static inner calsses are called inner calsses ;) :
+
+inner classes are associated with object of the outer class and they can access all the variables and methods of the outer class.
+
+Since inner classes are associated with instance, we can’t have any static variables in them.
+
+Object of java inner class are part of the outer class object and to create an instance of inner class, 
+we first need to create instance of outer class.
+
+Java inner class can be instantiated like this;
+
+OuterClass outerObject = new OuterClass();
+OuterClass.InnerClass innerObject = outerObject.new InnerClass();
+
+3 - There are two special kinds of java inner classes.
+
+3.1 - local inner class :
+
+class in method is called local inner class.
+local inner classes not associate with object.
+Since local inner class is not associated with Object, we can’t use private, public or protected access modifiers with it. The only allowed modifiers are abstract or final.
+A local inner class can access all the members of the enclosing class and local final variables in the scope it’s defined.
+
+
+3.2 - anonymous inner class
+
+A local inner class without name is known as anonymous inner class. An anonymous class is defined and instantiated in a single statement.
+Anonymous inner class always extend a class or implement an interface. Since an anonymous class has no name, it is not possible to define a constructor for an anonymous class.
+
+Anonymous inner classes are accessible only at the point where it is defined.

@@ -1,0 +1,25 @@
+1 - for each on Iterator :
+
+
+
+2 - Intefaces with method body:
+// reference : https://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method
+
+allow only default and static methods with body
+
+advantages :
+
+no need of implementation of those methods in all the derived classes .
+for old application it is benefited to not change implemented classes.
+
+Question : what happens if Inteface1 has default method method1 with implementation and Inteface with same default method with implemenation.
+?
+
+as java supports multiple inheritance in intefaces. it is the switchvation where we will get Diamond problem. to solve this, java raised the compilation
+error to implement that default method in derived classes (backward compatability)
+
+static methods :
+
+not possible to override.
+
+static methods in inteface only available for static default methods.

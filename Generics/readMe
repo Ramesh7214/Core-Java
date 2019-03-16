@@ -1,0 +1,46 @@
+Ref : http://tutorials.jenkov.com/java-generics/classes.html
+
+The Java Generics features were added to the Java language from Java 5. 
+Generics add a way to specify concrete types to general purpose classes and methods that operated on Object before.
+
+
+Generic Classes in Java :
+
+
+Example :
+
+public class CreateObjectFactory<T> {
+
+    Class clazz = null;
+
+    public CreateObjectFactory(Class clazz) {
+        this.clazz = clazz;
+    }
+
+    public T createInstance()
+    throws IllegalAccessException, InstantiationException {
+        return (T) this.clazz.newInstance();
+    }
+}
+
+usage :
+
+CreateObjectFactory<MyClass> factory =
+    new CreateObjectFactory<MyClass>(MyClass.class);
+
+MyClass myClassInstance = factory.createInstance();
+
+
+CreateObjectFactory<SomeObject> factory =
+    new CreateObjectFactory<SomeObject>(SomeObject.class);
+
+SomeObject someObjectInstance = factory.createInstance(); // no need type casting
+
+
+
+Wild cards :
+
+
+List<?> means a list typed to an unknown type. This could be a List<A>, a List<B>, a List<String> etc.
+List<? extends A> means a List of objects that are instances of the class A, or subclasses of A (e.g. B and C).
+List<? super A> means that the list is typed to either the A class, or a superclass of A

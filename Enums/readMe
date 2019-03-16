@@ -1,0 +1,108 @@
+Enums :
+
+A Java Enum is a special Java type used to define collections of constants. 
+introduced in java 5
+
+1 - Sample enum :
+
+public enum UserStatus {
+	ACTIVE,
+	DEACTIVE,
+	DELETED
+}
+
+
+public static void main(String[] args) {
+		
+		System.out.println(UserStatus.ACTIVE);
+		System.out.println(UserStatus.DEACTIVE);
+		System.out.println(UserStatus.DELETED);
+	}
+
+	out put :
+ACTIVE
+DEACTIVE
+DELETED
+
+2 - Enum with fields:
+
+public enum Months {
+	
+	JAN(1),
+	FEB(2),
+	MAR(3),
+	APR(4);
+	
+	private int numberOfMonth;// field
+	
+	Months(int numberOfMonth) // constructor
+	{
+		this.numberOfMonth = numberOfMonth;
+	}
+	
+	public int getNumberOfMonth()
+	{
+		return numberOfMonth;
+	}
+
+}
+
+3 - Enum with method
+
+public enum Caliculations {
+	PLUS, MINUS, TIMES, DIVIDE;
+
+	int calculate(int x, int y) {
+		switch (this) {
+		case PLUS:
+			return x + y;
+		case MINUS:
+			return x - y;
+		case TIMES:
+			return x * y;
+		case DIVIDE:
+			return x / y;
+		default:
+			throw new AssertionError("Unknown operations " + this);
+		}
+	}
+
+}
+
+
+4 - looping enum:
+
+	for(Months month : Months.values())
+		{
+			System.out.println(month);
+		}
+		
+		
+5 - comparing enum:
+
+		if(Months.JAN == Months.FEB)
+		{
+			System.out.println("Both are sme");
+		} 
+		
+6 - Switch 
+
+Months month = Months.FEB; 
+		
+		switch (month) {
+        case JAN:
+            System.out.println("This is Jan");
+            break;
+        case FEB:
+            System.out.println("This is Feb");
+            break;
+        case MAR:
+            System.out.println("This is March");
+            break;
+        default:
+            throw new AssertionError("Unknown month " + month);
+
+    }
+    
+    
+    

@@ -1,0 +1,228 @@
+What is collections?
+
+Collections are just like containers which holds mulitple similar items.
+
+
+Benefits :
+
+1 -Reduced Development Effort – It comes with almost all common types of collections and useful methods to iterate and manipulate the data. So we can concentrate more on business logic rather than designing our collection APIs.
+2 - Increased Quality – Using core collection classes that are well tested increases our program quality rather than using any home developed data structure.
+3 - Reusability and Interoperability
+4 - Reduce effort – to learn any new API if we use core collection API classes.
+
+Intefaces in Collections framework :
+
+List
+Set
+Map
+Queue
+Dequeue
+Iterator
+ListIterator
+SortedSet
+SortedMap
+
+Java Collections Classes :
+
+ArrayList
+LinkedList
+HashSet
+TreeSet
+HashMap
+TreeMap
+PriorityQueue
+Collections - utility class
+
+1 - List : is an inteface.
+
+1.1 - ArrayList : 
+
+it uses dynamic growable array to store the elements.
+default capacity 10. after reaching 10 it automatically grows the memory
+
+Behaviour of ArrayList :
+
+1 - allow duplicates
+2 - allow nulls
+2 - maintains the insertion order
+3 - non-synchronized
+4 - random access is allowed. (because uses array internally. index based access possible)
+5 -  manipulation is slow because a lot of shifting needs to be occurred if any element is removed from the array list.
+
+
+1.2 - LinkedList class
+
+LinkedList uses doubly linked list to store the elements.
+
+Behaviour of Linked list :
+
+1 - contain duplicate elements.
+2 - allow nulls
+2 - maintains insertion order.
+3 - non synchronized.
+4 - manipulation is fast because no shifting needs to be occurred.
+
+2 - Set :
+
+2.1 :HashSet
+
+HashSet uses a hash Map for storage. It inherits the AbstractSet class and implements Set interface.
+
+Behaviour of HashSet :
+
+1 - dont accept duplicates. i.e unique elements are allowed
+2 - allow nulls
+3 - not maintain insertion order (in normal example it looks like it folows insertion order. but as per docs java not guaranteed the order)
+4 - HashSet stores the elements by using a mechanism called hashing.
+
+2.2 : LinkedHashSet :
+
+LinkedHashSet class is a Hash map and Linked list implementation of the set interface. 
+It inherits HashSet class and implements Set interface.
+
+Behaviour :
+
+Dont allow duplicates
+Maintains insertion order.
+
+2.3 : TreeSet :
+
+TreeSet class implements the Set interface that uses a tree for storage.
+ It inherits AbstractSet class and implements NavigableSet interface. 
+
+The important points about Java TreeSet class are:
+
+dont allow duplicates
+Access and retrieval times are quiet fast.
+Maintains ascending order. (Natural sorting)
+
+3 . Map :
+
+few Map methods :
+
+Object put(Object key, Object value)	-It is used to insert an entry in this map.
+void putAll(Map map)	-It is used to insert the specified map in this map.
+Object remove(Object key)	-It is used to delete an entry for the specified key.
+Object get(Object key)	-It is used to return the value for the specified key.
+boolean containsKey(Object key)-	It is used to search the specified key from this map.
+Set keySet()	-It is used to return the Set view containing all the keys.
+Set entrySet()	-It is used to return the Set view containing all the keys and values.
+Object getKey()	-It is used to obtain key.
+Object getValue()	-It is used to obtain value.
+
+
+3.1 - HashMap :
+
+
+insert the values as key and value pair
+duplicate keys not allowed. (not compile any error)
+only one null is allowed as key.
+nulls allowed as value
+
+methods :
+
+void clear()	-It is used to remove all of the mappings from this map.
+boolean containsKey(Object key)-	It is used to return true if this map contains a mapping for the specified key.
+boolean containsValue(Object value)	-It is used to return true if this map maps one or more keys to the specified value.
+boolean isEmpty()	-It is used to return true if this map contains no key-value mappings.
+Object clone()	-It is used to return a shallow copy of this HashMap instance: the keys and values themselves are not cloned.
+Set entrySet()	-It is used to return a collection view of the mappings contained in this map.
+Set keySet()	-It is used to return a set view of the keys contained in this map.
+Object put(Object key, Object value)	-It is used to associate the specified value with the specified key in this map.
+int size()	-It is used to return the number of key-value mappings in this map.
+Collection values()	-It is used to return a collection view of the values contained in this map.
+
+
+3.2  :LinkedHashMap:
+
+Same as HashMap but it maintains insertion order.
+It inherits HashMap class and implements the Map interface.
+
+
+3.3 : TreeMap:
+Same as HashMap but inserts the values in sorted order.
+It implements the NavigableMap interface and extends AbstractMap class
+Treemap dont allow null keys**
+
+methods :
+
+boolean containsKey(Object key)	-It is used to return true if this map contains a mapping for the specified key.
+boolean containsValue(Object value)	-It is used to return true if this map maps one or more keys to the specified value.
+Object firstKey()	-It is used to return the first (lowest) key currently in this sorted map.
+Object get(Object key)	-It is used to return the value to which this map maps the specified key.
+Object lastKey()	-It is used to return the last (highest) key currently in this sorted map.
+Object remove(Object key)	-It is used to remove the mapping for this key from this TreeMap if present.
+void putAll(Map map)	-It is used to copy all of the mappings from the specified map to this map.
+Set entrySet()	-It is used to return a set view of the mappings contained in this map.
+int size()	-It is used to return the number of key-value mappings in this map.
+Collection values()	-It is used to return a collection view of the values contained in this map.
+
+3.4 : HashTable:
+
+Same as Hashtable but synchronized
+dont allow null as key or value.
+because of synchronization it is slow
+not fail fast
+
+
+
+4 . Queue :
+Follow the FIFO 
+i.e first element is removed first and last element is removed at last.
+
+4.1 : PriorityQueue class
+
+The PriorityQueue class provides the facility of using queue.
+But it does not orders the elements in FIFO manner i.e insertion order not followed while inserting.
+
+
+5 . Dequeue :
+
+it is a "double ended queue".
+insertion and removal possible from both the sides
+
+5.1 : ArrayDeque :
+
+we can add or remove elements from both sides.
+Null elements are not allowed 
+ArrayDeque is not thread safe, in the absence of external synchronization.
+ArrayDeque has no capacity restrictions.
+ArrayDeque is faster than LinkedList and Stack.
+
+Dequeue methods :
+
+boolean add(object)	-It is used to insert the specified element into this deque and return true upon success.
+boolean offer(object)	-It is used to insert the specified element into this deque.
+Object remove()	-It is used to retrieves and removes the head of this deque.
+Object poll()	-It is used to retrieves and removes the head of this deque, or returns null if this deque is empty.
+Object element()	-It is used to retrieves, but does not remove, the head of this deque.
+Object peek()	-It is used to retrieves, but does not remove, the head of this deque, or returns null if this deque is empty.
+
+6 : Collections utility class:
+
+is a utility class
+we have many helper methods to deal with collections
+
+7 - Comparable and Comparator :
+
+Both are used to sort the collection elements.
+
+7.1 : Comparable :
+
+It is a functinal Inteface.
+has the only one method  public int compareTo(Object obj).
+It is possible to sort the elements on only one property.
+Our class has to implement the comparable inteface and need to override the compareTo method.
+finally we take help of helper class Collections.sort() to sort the elements
+
+7.2 : Comparator:
+
+It is alos functional inteface
+has the only one method compare() method.
+it is possible to sort the elements on multiple properties.
+we implement superately. so our pojo class no need to implement comparaotr.
+finally we take help of helper class Collections.sort() to sort the elements
+
+
+
+
